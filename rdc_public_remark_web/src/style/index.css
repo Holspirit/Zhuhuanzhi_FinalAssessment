@@ -1,0 +1,423 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+}
+
+.dzdp_page {
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+/* 登录界面样式 */
+.dzdp_login {   
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s;
+}
+
+.dzdp_login_header {
+    width: 90%;
+    height: 30px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_login_config {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dzdp_logo {
+    width: 180px;
+    height: 50px;
+}
+
+.dzdp_login_content {
+    width: 90%;
+    height: 60%;
+}
+
+.dzdp_login_content,.dzdp_login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_login_tip {
+    width: 200px;
+    height: 60px;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: -20px;
+
+    transition: all 0.3s linear;
+}
+
+.account,.password {
+    width: 200px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 12px;
+    margin: 10px 0;
+
+    border: 1px solid gray;
+}
+
+.dzdp_log {
+    width: 90px;
+    height: 35px;
+    font-weight: 600;
+
+    border-radius: 20px;
+    border: 2px solid #80808066;
+}
+
+.dzdp_log:active {
+    box-shadow: 0 0 5px gray;
+}
+
+.dzdp_log {
+    color: white;
+    background-color: rgb(254, 99, 57);
+}
+
+.dzdp_login_attention {
+    display: flex;
+}
+
+.dazp_login-attentionText {
+    display: block;
+    width: 200px;
+    font-size: 10px;
+}
+
+.dzdp_login_attention_confirm {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid gray;
+    font-size: 10px;
+    color: black;
+    background-color: white;
+
+    text-align: center;
+    line-height: 12px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    margin-right: 5px;
+}
+
+.attentionConfirm {
+    color: white;
+    background-color: rgb(254, 99, 57);
+}
+
+.dzdp_login_bottom {
+    color: rgba(128, 128, 128, 0.797);
+    font-size: 12px;
+}
+
+
+/* 主页面样式 */
+.dzdp_mainPage {
+    flex-direction: column;
+    align-items: center; 
+}
+
+.dzdp_mainPage_header {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+
+.dzdp_mainPage_header_tab {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.dzdp_mainPage_headTab {
+    font-size: 13px;
+    color: gray;
+}
+
+.dzdp_mainPage_searh {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+
+    border: 1px solid rgb(254, 114, 45);
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dzdp_mainPage_searhBox {
+    height: 100%; 
+    width: 70%;
+    border: none;
+}
+
+.dzdp_mainPage_searhBtn {
+    width: 13%;
+    height: 23px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    background-image: linear-gradient(rgb(254,134,53), rgb(254, 114, 45) );
+
+    border: 1px solid rgb(254, 114, 45);
+    border-radius: 30px;
+
+    margin-right: 5px;  
+}
+
+.dzdp_mainPage_content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.dzdp_mainPage_content_tab {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_mainPage_content_tab .tab_choice{
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+
+.header_tab_active {
+    background: linear-gradient(rgb(254, 114, 45), rgb(254, 99, 57))no-repeat left bottom /  30px 3px ;
+}
+
+.header_tab_active,.dzdp_mainPage_content_tab .content_tab_active {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.dzdp_mainPage_noteShow {
+    width: 100%;
+    position: relative;
+    overflow: scroll;
+}
+
+.dzdp_mainPage_noteShow>.mainPage_noteBox {
+    width: 150px;
+    position: absolute;
+    transition: .3s;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.306);
+}
+
+.dzdp_mainPage_noteImg {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(128, 128, 128, 0.553);
+}
+
+.dzdp_mainPage_noteText {
+    width: 100%;
+    height: 20%;
+    background-color: rgba(7, 170, 235, 0.785);
+    margin: 0 auto;
+}
+
+.dzdp_Page_bottom {
+    width: 100%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+    border-top: 1px solid rgba(128, 128, 128, 0.119); 
+    position: fixed; 
+    bottom: 0px;
+    background-color: white;
+}
+
+.dzdp_mainPage_bottomTab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    font-size: 12px;
+    color: gray;
+}
+
+.dzdp_mainPage_bottomTab>.tab_choice,.tab_choice_publish {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dzdp_mainPage_bottomTab .tab_choice_publish {
+    background-image: linear-gradient(to right,rgb(254, 138, 58), rgb(253, 94, 34), rgb(253, 61, 16)); 
+    width: 65px; 
+    color: white; 
+    font-weight: 600; 
+    font-size: 12px; 
+    background-color: white;
+}
+
+.bottom_tab_active {
+    font-size: 10px;
+    color: rgb(253, 61, 16);
+    background-color: rgb(255, 236, 227);
+}
+
+
+/* 搜索界面样式 */
+.dzdp_searchPage {
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.dzdp_searchPage_search {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.dzdp_searchPage_searchBox {
+    width: 75%;
+    height: 30px;
+
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.dzdp_searchPage_searchBtn {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dzdp_searchPage_historyHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_searchPage_Head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discoveryToggle {
+    width: 18%;
+    font-size: 12px; 
+    color: rgba(128, 128, 128, 0.89);
+
+    display: flex; 
+    align-items: center;
+}
+
+/* 消息界面 */
+.dzdp_messagePage {
+    flex-direction: column;
+    align-items: center; 
+}
+
+.dzdp_messagePage_head {
+    width: 100%;
+
+    display: flex;
+    justify-content: end;
+
+    margin-bottom: 20px;
+}
+
+.dzdp_messagePage_title {
+    display: block;
+    width: 33%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.dzdp_messagePage_delRecord {
+    width: 33%;
+
+    font-size: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dzdp_messagePage_tips {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.messagePage_likeCheck,.messagePage_comment,.messagePage_fansAdd {
+    width: 33%;
+    font-size: 12px;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.messagePage_IconBox {
+    width: 36%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.iconDesription {
+    font-size: 15px;
+    font-weight: 200;
+}
