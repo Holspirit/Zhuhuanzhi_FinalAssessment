@@ -127,6 +127,7 @@ tabToggle(document.querySelectorAll('.dzdp_mainPage_content_tab .tab_choice'), '
 
 tabToggle(document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice'), 'bottom_tab_active')
 
+tabToggle(document.querySelectorAll('.dzdp_personPage_myRecord_head li'), 'recordHead_active')
 //瀑布流式布局
 
 
@@ -243,6 +244,11 @@ for (let i = 0; i < 4; i++) {
     document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice')[i].addEventListener('click', () => {
         document.querySelectorAll('.innerPage')[i].style.display = 'flex'
         document.querySelector('.dzdp_mainPage_bottomTab .tab_choice:nth-child(1)').innerHTML = i === 0 ? '推荐' : '首页'
+        if (i === 3) {
+            document.body.style.backgroundColor = 'rgba(192, 183, 183, 0.41)'
+        } else {
+            document.body.style.backgroundColor = 'white'
+        }
         for (let k = 0; k < 3; k++) {
             document.querySelectorAll(`.innerPage:not(.innerPage_0${i + 1})`)[k].style.display = 'none'
         }

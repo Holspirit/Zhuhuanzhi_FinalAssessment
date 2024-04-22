@@ -15,6 +15,8 @@ body {
     top: 0;
     position: absolute;
 }
+
+
 /* 登录界面样式 */
 .dzdp_login {   
     flex-direction: column;
@@ -211,6 +213,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin: 16px 0;
 }
 
 .dzdp_mainPage_content_tab .tab_choice{
@@ -257,7 +261,9 @@ body {
 }
 
 .dzdp_Page_bottom {
+    display: flex;
     width: 100%; 
+    height: 8%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
     border-top: 1px solid rgba(128, 128, 128, 0.119); 
     position: fixed; 
@@ -420,4 +426,93 @@ body {
 .iconDesription {
     font-size: 15px;
     font-weight: 200;
+}
+
+/* 我的界面 */
+.dzdp_personPage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.dzdp_personPage_head {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.dzdp_personPage_headphoto {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 80px;
+    background-color: azure;
+
+    margin-right: 20px;
+}
+
+.dzdp_personPage_headphoto_iconBox {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 70px;
+    background-color: rgba(76, 73, 73, 0.174);
+}
+
+.dzdp_personPage_headphoto_iconBox,.dzdp_personPage_headphoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dzdp_personPage_headText {
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dzdp_personPage_statics {
+    width: 100%;
+    height: 10%;
+
+    border-radius: 12px;
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+.dzdp_personPage_staticsBox {
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_personPage_myRecord {
+    width: 100%;
+    height: 60%;
+    border-radius: 12px ;
+    background-color: rgba(192, 183, 183, 0.272);
+}
+
+.dzdp_personPage_myRecord_head {
+    width: 30%;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 20px;
+}
+
+.recordHead_active {
+    background: linear-gradient(to right,rgb(254, 138, 58), rgb(253, 94, 34), rgb(253, 61, 16)) no-repeat left bottom /  35px 4px ;
 }
