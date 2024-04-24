@@ -1,0 +1,50 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+i {
+    font-style: normal;
+}
+
+strong {
+    font-style: normal;
+}
+
+button {
+    background-color: white;
+}
+
+h1,h2 {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+em {
+    font-style: normal;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+textarea {
+    border: none;
+    outline: none;
+}
