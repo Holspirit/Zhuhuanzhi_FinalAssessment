@@ -7,7 +7,7 @@ body {
 
 .dzdp_page {
     display: flex;
-    height: 90vh;
+    height: 98vh;
     width: 90vw;
     margin: auto;
     left: 0;
@@ -515,4 +515,103 @@ body {
 
 .recordHead_active {
     background: linear-gradient(to right,rgb(254, 138, 58), rgb(253, 94, 34), rgb(253, 61, 16)) no-repeat left bottom /  35px 4px ;
+}
+
+/* 发表笔记页面 */
+.dzdp_notePublish {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.dzdp_notePublish_head {
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_notePublish_editContent {
+    width: 100%;
+    height: 85%;
+
+    margin-top: 15px;
+}
+
+.dzdp_notePublish_pictureAdd {
+    width: 90px;
+    height: 90px;
+
+    background-color: rgba(246 , 246, 246);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.dzdp_notePublish_titleInput {
+    width: 100%;
+    border: none;
+
+    margin-top: 20px;
+}
+
+.dzdp_notePublish_tag_topic {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: start;
+}
+
+.dzdp_notePublish_topicBox,.dzdp_notePublish_tagBox {
+    font-size: 10px;
+    text-align: center;
+    margin-right: 10px;
+
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+    line-height: 20px;
+
+    background-color: rgb(246, 246, 246);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dzdp_notePublish_placeHead {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_notePublish_placeIcon {
+    font-size: 12px;
+    font-weight: 600;
+    width: 40%;
+    height: 30%;
+
+    display: flex;
+    align-items: center;
+}
+
+.dzdp_notePublish_placeChoose {
+    font-size: 12px;
+    color: gray;
+}
+
+.dzdp_notePublish_btn {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+
+    border: none;
+    background-color: rgb(255, 99, 57);
 }

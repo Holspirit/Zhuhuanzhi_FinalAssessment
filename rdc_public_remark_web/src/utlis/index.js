@@ -1,66 +1,11 @@
-//封装简易axios函数
-function myAxios (config) {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest()
-        if(config.params) {
-            const paramsObj = new URLSearchParams(config.params)
-            const queryString = paramsObj.toString()
-            config.url += `?${queryString}`
-        }
-
-        xhr.open(config.method || 'GET', config.url)
-        xhr.addEventListener('loadend', () => {
-            if (xhr.status = 200) {
-                resolve(JSON.parse(xhr.response))
-            } else {
-                reject(new Error(xhr.response))
-            }
-        })
-
-        if(config.data) {
-            const jsonStr = JSON.stringify(config.data)
-            xhr.setRequestHeader('Content-Type', 'application/json')
-            xhr.send(jsonStr)
-        } else {
-            xhr.send()
-        }
-
-    })
-}
-
-//封装提示框显示函数
-function alertTip (inner, judge) {
-    document.querySelector('.dzdp_login_tip').style.opacity = '1'
-    document.querySelector('.dzdp_login_tip').innerHTML = inner
-
-    if (!judge) {
-        document.querySelector('.dzdp_login_tip').style.backgroundColor = 'rgba(250, 0, 0, 0.5)'
-        setTimeout(() => {
-            document.querySelector('.dzdp_login_tip').style.opacity = '0'
-        }, 2000)
-        return
-    }
-    document.querySelector('.dzdp_login_tip').style.backgroundColor = 'rgb(14, 232, 14, 0.5)'
-    setTimeout(() => {
-        document.querySelector('.dzdp_login_tip').style.opacity = '0'
-    }, 2000)
-}
-
-//封装tab栏切换函数
-function tabToggle (arr, className_active) {
-    for (let i = 0; i < arr.length; i++) {
-       arr[i].addEventListener('click', e => {
-        if (e.target.tagName === 'LI' || e.target.tagName ==='H2') {
-            const flag = document.querySelector('.' + className_active)
-            if(flag) {
-                document.querySelector('.' + className_active).classList.remove(className_active)
-            }
-            e.target.classList.add(className_active)
-        }
-       })
+window.onload = function () {
+    if (localStorage.getItem('token')) {
+        document.querySelector('.dzdp_login').style.display = 'none'
+        document.querySelector('.dzdp_mainPage').style.display = 'flex'
+        setPosition()
+        document.querySelector('.dzdp_Page_bottom').style.display = 'flex'
     }
 }
-
 
 //获取登录按钮 赋予点击事件 登录
 document.querySelector('.dzdp_log').addEventListener('click', e => {
@@ -105,11 +50,14 @@ document.querySelector('.dzdp_log').addEventListener('click', e => {
                 document.querySelector('.dzdp_Page_bottom').style.display = 'flex'
                 setPosition()
             }, 2600)
+
+            localStorage.setItem('token', result.data.token)
         } else {
             alertTip(result.msg, false)
         }
     })
 })
+
 
 document.querySelector('.dzdp_login_attention_confirm').addEventListener('click', e => {
     if(e.target.tagName = 'I') {
@@ -121,6 +69,8 @@ document.querySelector('.dzdp_login_attention_confirm').addEventListener('click'
     }  
 })
 
+
+// 调用tab栏切换函数
 tabToggle(document.querySelectorAll('.dzdp_mainPage_headTab'), 'header_tab_active')
 
 tabToggle(document.querySelectorAll('.dzdp_mainPage_content_tab .tab_choice'), 'content_tab_active')
@@ -128,9 +78,9 @@ tabToggle(document.querySelectorAll('.dzdp_mainPage_content_tab .tab_choice'), '
 tabToggle(document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice'), 'bottom_tab_active')
 
 tabToggle(document.querySelectorAll('.dzdp_personPage_myRecord_head li'), 'recordHead_active')
+
+
 //瀑布流式布局
-
-
 const waterFall = document.querySelector('.dzdp_mainPage_noteShow')
 let noteBoxWidth = 150
 
@@ -225,11 +175,12 @@ document.querySelector('.searchPage_returnIcon').addEventListener('click', () =>
 })
 
 const theFirstTab_bottom = document.querySelector('.dzdp_mainPage_bottomTab .tab_choice:nth-child(1)')
+
 //判断滑动到某一距离时 推荐图标变为火箭 点击回到顶部
 window.addEventListener('scroll', () => {
     if (document.documentElement.scrollTop >= 150) {
         theFirstTab_bottom.innerHTML = `
-        <img class="mainPage_backToTop" src="/static/icon/backToTop.svg" alt="" style="width: 70%; object-fit: cover; object-position: center; border-radius: 15px;">
+        <img class="mainPage_backToTop" src="/static/icon/back_to_top.svg" alt="" style="width: 70%; object-fit: cover; object-position: center; border-radius: 15px;">
         `
         theFirstTab_bottom.addEventListener('click', () => {
             document.documentElement.scrollTop = 0
@@ -240,17 +191,33 @@ window.addEventListener('scroll', () => {
 })
 
 //大页面切换
-for (let i = 0; i < 4; i++) {
-    document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice')[i].addEventListener('click', () => {
+for (let i = 0; i < 5; i++) {
+    document.querySelectorAll('.dzdp_mainPage_bottomTab .bottom_tab')[i].addEventListener('click', () => {
         document.querySelectorAll('.innerPage')[i].style.display = 'flex'
-        document.querySelector('.dzdp_mainPage_bottomTab .tab_choice:nth-child(1)').innerHTML = i === 0 ? '推荐' : '首页'
-        if (i === 3) {
-            document.body.style.backgroundColor = 'rgba(192, 183, 183, 0.41)'
-        } else {
-            document.body.style.backgroundColor = 'white'
-        }
-        for (let k = 0; k < 3; k++) {
+        document.querySelector('.dzdp_mainPage_bottomTab .bottom_tab:nth-child(1)').innerHTML = i === 0 ? '推荐' : '首页'
+        document.body.style.backgroundColor = i === 4 ? 'rgba(192, 183, 183, 0.5)' : 'white'
+        document.querySelector('.dzdp_Page_bottom').style.display = i === 2 ?  'none' : 'flex'     
+        for (let k = 0; k < 4; k++) {
             document.querySelectorAll(`.innerPage:not(.innerPage_0${i + 1})`)[k].style.display = 'none'
         }
     })
 }
+
+document.querySelector('#backIcon').addEventListener('click', e => {
+    if (e.target.tagName === 'IMG') {
+        document.querySelector('.dzdp_notePublish').style.display = 'none'
+        for (let i = 0; i < 4; i++) {
+            for (let k = 0; k < document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice')[i].classList.length; k++) {
+                if (document.querySelectorAll('.dzdp_mainPage_bottomTab .tab_choice')[i].classList[k] === 'bottom_tab_active') {
+                    if (i < 2) {
+                        document.querySelector('.dzdp_mainPage_bottomTab .bottom_tab:nth-child(1)').innerHTML = i === 0 ? '推荐' : '首页'
+                        document.querySelector(`.innerPage_0${i + 1}`).style.display = 'flex'
+                    } else {
+                        document.querySelector(`.innerPage_0${i + 2}`).style.display = 'flex'
+                    }      
+                }
+            }
+        }
+        document.querySelector('.dzdp_Page_bottom').style.display = 'flex'
+    }
+})

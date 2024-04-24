@@ -56,7 +56,7 @@
                 <li class="tab_choice">出行</li>
                 <li class="tab_choice">户外</li>
             </ul>
-            <div class="dzdp_mainPage_noteShow">
+            <div class="dzdp_mainPage_noteShow recommendPage">
                 
             </div>
        </div> 
@@ -65,12 +65,56 @@
     <!-- 视频界面 空白-->
     <div class="dzdp_videoPage dzdp_page innerPage innerPage_02" style="display: none;"></div>
 
+     <!-- 发表笔记的界面 -->
+     <div class="dzdp_notePublish dzdp_page innerPage innerPage_03"  style="display: none;">
+        <div class="dzdp_notePublish_head">
+            <img src="/static/icon/back.svg" alt="" style="width: 27px;" id="backIcon">
+            <span class="dzdp_notePublish_title" >发笔记</span>
+            <img src="/static/icon/attention.svg" alt="" style="width: 17px;">
+        </div>
+
+        <div class="dzdp_notePublish_editContent">
+            <div class="dzdp_notePublish_picture" style="height: 20%;">
+                <div class="dzdp_notePublish_pictureAdd">
+                    <img src="/static/icon/picture_add.svg" alt="" style="width: 30%;">
+                </div>
+            </div>
+            <input type="text" class="dzdp_notePublish_titleInput" placeholder="填写标题会被更多人看到~">
+            <hr>
+            <textarea name="" id="" cols="30" rows="10" class="dzdp_notePublish_mainBody" placeholder="添加正文" style="width: 100%;"></textarea>
+            <div class="dzdp_notePublish_tag_topic">
+                <div class="dzdp_notePublish_topicBox">
+                    <img src="/static/icon/topic.svg" alt="" style="width: 25%;">
+                    话题
+                </div>
+                <div class="dzdp_notePublish_tagBox">
+                    <img src="/static/icon/tag.svg" alt="" style="width: 35%;">
+                    标签
+                </div>
+            </div>
+            <hr>
+            <div class="dzdp_notePublish_place" style="width: 100%;">
+                <div class="dzdp_notePublish_placeHead">
+                    <div class="dzdp_notePublish_placeIcon">
+                        <img src="/static/icon/place.svg" alt="" style="width: 27px;">
+                        添加地点
+                    </div>
+                    <div class="dzdp_notePublish_placeChoose">
+                        去选择 &gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="dzdp_notePublish_btn">发 布 笔 记</button>
+    
+    </div>  
+
     <!-- 消息界面 -->
-    <div class="dzdp_messagePage dzdp_page innerPage innerPage_03" style="display: none;">
+    <div class="dzdp_messagePage dzdp_page innerPage innerPage_04" style="display: none;">
         <div class="dzdp_messagePage_head">
             <h1 class="dzdp_messagePage_title">消 息</h1>
             <span class="dzdp_messagePage_delRecord">
-                <img src="/static/icon/delRecord.svg" alt="" style="width: 20%;">
+                <img src="/static/icon/del_record.svg" alt="" style="width: 20%;">
                 清除未读
             </span>
         </div>
@@ -83,13 +127,13 @@
             </div>
             <div class="messagePage_comment">
                 <div class="messagePage_IconBox" style="background-color: rgb(254, 227, 232);">
-                    <img src="/static/icon/commentIcon.svg" style="width: 60%;">
+                    <img src="/static/icon/comment_icon.svg" style="width: 60%;">
                 </div>
                 <span class="iconDesription">评论和@</span>
             </div>
             <div class="messagePage_fansAdd">
                 <div class="messagePage_IconBox" style="background-color: rgb(226, 244, 255);">
-                    <img src="/static/icon/fansAdd.svg" style="width: 60%;">
+                    <img src="/static/icon/fans_add.svg" style="width: 60%;">
                 </div>
                 <span class="iconDesription">新增粉丝</span>
             </div>
@@ -99,11 +143,11 @@
      </div>
 
     <!-- 我的 页面 -->
-    <div class="dzdp_personPage dzdp_page innerPage innerPage_04" style="display: none;">
+    <div class="dzdp_personPage dzdp_page innerPage innerPage_05" style="display: none;">
         <div class="dzdp_personPage_head">
             <div class="dzdp_personPage_headphoto">
                 <div class="dzdp_personPage_headphoto_iconBox">
-                    <img src="/static/icon/headphotoAdd.svg" alt="" style="width: 60%;">
+                    <img src="/static/icon/headphoto_add.svg" alt="" style="width: 60%;">
                 </div>
             </div>
             <section class="dzdp_personPage_headText">
@@ -124,20 +168,22 @@
         </div>
         <div class="dzdp_personPage_myRecord">
             <ul class="dzdp_personPage_myRecord_head">
-                <li>动态</li>
+                <li class="recordHead_active">动态</li>
                 <li>笔记</li>
             </ul>
         </div>
     </div>
 
+   
+
     <!-- 底部tab切换栏 -->
     <div class="dzdp_Page_bottom" style="display: none;">
         <ul class="dzdp_mainPage_bottomTab">
-            <li class="tab_choice bottom_tab_active">推荐</li>
-            <li class="tab_choice">视频</li>
-            <li class="tab_choice_publish">+ 发笔记</li>
-            <li class="tab_choice">消息</li>
-            <li class="tab_choice">我的</li>
+            <li class="bottom_tab tab_choice bottom_tab_active">推荐</li>
+            <li class="bottom_tab tab_choice">视频</li>
+            <li class="bottom_tab tab_choice_publish">+ 发笔记</li>
+            <li class="bottom_tab tab_choice">消息</li>
+            <li class="bottom_tab tab_choice">我的</li>
         </ul>
    </div>
 
@@ -151,7 +197,7 @@
         <div class="dzdp_searchPage_history" style="width: 100%; height: 20%;">
             <div class="dzdp_searchPage_historyHead">
                 <h2 class="searchHistory" style="font-weight: 600;">历史搜索</h2>
-                <img src="/static/icon/delIcon.svg" class="dzdp_searchPage_historyDel" style="width: 6%; height: 6%;">
+                <img src="/static/icon/del_icon.svg" class="dzdp_searchPage_historyDel" style="width: 6%; height: 6%;">
             </div>
             <div class="dzdp_searchPage_historyContent">
                
@@ -160,7 +206,7 @@
         <div class="dzdp_searchPage_discovery" style="width: 100%;">
             <div class="dzdp_searchPage_Head">
                 <h2 class="searchDiscovery" style="font-weight: 600;">搜索发现</h2>
-                <span class="discoveryToggle"><img src="/static/icon/discoveryToggle.svg" class="dzdp_searchPage_discoveryToggle" style="width: 25%; height: 30%;">换一换</span>
+                <span class="discoveryToggle"><img src="/static/icon/discovery_toggle.svg" class="dzdp_searchPage_discoveryToggle" style="width: 25%; height: 30%;">换一换</span>
             </div>
             <div class="dzdp_searchPage_historyContent">
                 
@@ -171,6 +217,7 @@
 
 
     <!-- 引用js文件 -->
+    <script src="../utlis/defaultTool.js"></script>
     <script src="../utlis/index.js"></script>
 </body>
 </html>
