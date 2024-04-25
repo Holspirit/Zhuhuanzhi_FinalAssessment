@@ -1,0 +1,123 @@
+/* 登录界面样式 */
+.dzdp_login {   
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s;
+}
+
+.dzdp_login_header {
+    width: 90%;
+    height: 30px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_login_config {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dzdp_logo {
+    width: 180px;
+    height: 50px;
+}
+
+.dzdp_login_content {
+    width: 90%;
+    height: 60%;
+}
+
+.dzdp_login_content,.dzdp_login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_login_tip {
+    width: 200px;
+    height: 60px;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: -20px;
+
+    transition: all 0.3s linear;
+}
+
+.account,.password {
+    width: 200px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 12px;
+    margin: 10px 0;
+
+    border: 1px solid gray;
+}
+
+.dzdp_log {
+    width: 90px;
+    height: 35px;
+    font-weight: 600;
+
+    border-radius: 20px;
+    border: 2px solid #80808066;
+}
+
+.dzdp_log:active {
+    box-shadow: 0 0 5px gray;
+}
+
+.dzdp_log {
+    color: white;
+    background-color: rgb(254, 99, 57);
+}
+
+.dzdp_login_attention {
+    display: flex;
+}
+
+.dazp_login-attentionText {
+    display: block;
+    width: 200px;
+    font-size: 10px;
+}
+
+.dzdp_login_attention_confirm {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid gray;
+    font-size: 10px;
+    color: black;
+    background-color: white;
+
+    text-align: center;
+    line-height: 12px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    margin-right: 5px;
+}
+
+.attentionConfirm {
+    color: white;
+    background-color: rgb(254, 99, 57);
+}
+
+.dzdp_login_bottom {
+    color: rgba(128, 128, 128, 0.797);
+    font-size: 12px;
+}

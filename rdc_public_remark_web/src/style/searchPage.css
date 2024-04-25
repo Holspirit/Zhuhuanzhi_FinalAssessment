@@ -1,0 +1,51 @@
+/* 搜索界面样式 */
+.dzdp_searchPage {
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.dzdp_searchPage_search {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.dzdp_searchPage_searchBox {
+    width: 75%;
+    height: 30px;
+
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.dzdp_searchPage_searchBtn {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dzdp_searchPage_historyHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_searchPage_Head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discoveryToggle {
+    width: 18%;
+    font-size: 12px; 
+    color: rgba(128, 128, 128, 0.89);
+
+    display: flex; 
+    align-items: center;
+}

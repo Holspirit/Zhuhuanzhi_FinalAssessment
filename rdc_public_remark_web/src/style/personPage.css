@@ -1,0 +1,113 @@
+
+.dzdp_personPage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    background: url(/static/images/defaultBgi.jpg) no-repeat center / 120% 100%;
+    width: 100%;
+ 
+}
+
+.dzdp_personPage_head {
+    width: 90%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.dzdp_personPage_headphoto {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 80px;
+    background-color: azure;
+
+    margin-right: 20px;
+}
+
+.dzdp_personPage_headphoto_iconBox {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 70px;
+    background-color: rgba(76, 73, 73, 0.174);
+}
+
+.dzdp_personPage_headphoto_iconBox,.dzdp_personPage_headphoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dzdp_personPage_headText {
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-right: 30px;
+}
+
+.dzdp_personPage_statics {
+    width: 90%;
+    height: 10%;
+
+    border-radius: 12px;
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+.dzdp_personPage_staticsBox {
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_personPage_myRecord {
+    width: 100%;
+    height: 60%;
+    border-radius: 12px ;
+    background-color: rgba(192, 183, 183, 0.272);
+}
+
+.dzdp_personPage_myRecord_head {
+    width: 30%;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 20px;
+}
+
+.recordHead_active {
+    background: linear-gradient(to right,rgb(254, 138, 58), rgb(253, 94, 34), rgb(253, 61, 16)) no-repeat left bottom /  35px 4px ;
+}
+
+.dzdp_personPage_abilityBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    height: 80px;
+}
+
+.personPage_personMessage_edit,.personPage_logOut {
+    width: 60px;
+    height: 25px;
+    font-size: 10px;
+
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.557);
+}

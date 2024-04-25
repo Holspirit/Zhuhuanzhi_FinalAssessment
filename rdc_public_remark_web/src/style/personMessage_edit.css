@@ -1,0 +1,87 @@
+.dzdp_personEditPage,.dzdp_personEditPage_uname {
+    flex-direction: column;
+    align-items: center;
+    transition: 2s;
+}
+
+
+.dzdp_personEditPage_head {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+}
+
+.dzdp_personEditPage_title {
+    margin-left: calc((90vw - 130px) / 2);
+    text-align: center;
+}
+
+.dzdp_personEditPage_edition {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+/* 分割线样式 */
+.edit_gapLine {
+    width: 100%;
+    height: 15px;
+
+    background-color: rgb(246, 246, 246);
+}
+
+/* 修改昵称界面样式 */
+.dzdp_personEditPage_edition>.editPart {
+    width: 95%;
+    height: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(242, 242, 242);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dzdp_unameEdit_tipBox {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(241, 241, 241);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dzdp_unameEdit_tip {
+    width: 90%;
+    height: 30px;
+    border-radius: 8px;
+
+    background-color: red;
+}
+
+.dzdp_unameEditBox {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(128, 128, 128, 0.082);
+    background-color: white;
+}
+
+.dzdp_unameEdit {
+    width: 90%;
+    height: 25px;
+}

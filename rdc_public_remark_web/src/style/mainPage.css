@@ -1,0 +1,165 @@
+/* 主页面样式 */
+.dzdp_mainPage {
+    flex-direction: column;
+    align-items: center; 
+}
+
+.dzdp_mainPage_header {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+
+.dzdp_mainPage_header_tab {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.dzdp_mainPage_headTab {
+    font-size: 13px;
+    color: gray;
+}
+
+.dzdp_mainPage_search {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+
+    border: 1px solid rgb(254, 114, 45);
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dzdp_mainPage_searchBox {
+    height: 100%; 
+    width: 70%;
+    border: none;
+}
+
+.dzdp_mainPage_searchBtn {
+    width: 42px;
+    height: 23px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    background-image: linear-gradient(rgb(254,134,53), rgb(254, 114, 45) );
+
+    border: 1px solid rgb(254, 114, 45);
+    border-radius: 30px;
+
+    margin-right: 5px;  
+}
+
+.dzdp_mainPage_content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.dzdp_mainPage_content_tab {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 16px 0;
+}
+
+.dzdp_mainPage_content_tab .tab_choice{
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+
+.header_tab_active {
+    background: linear-gradient(rgb(254, 114, 45), rgb(254, 99, 57))no-repeat left bottom /  30px 3px ;
+}
+
+.header_tab_active,.dzdp_mainPage_content_tab .content_tab_active {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.dzdp_mainPage_noteShow {
+    width: 100%;
+    position: relative;
+    overflow: scroll;
+}
+
+.dzdp_mainPage_noteShow>.mainPage_noteBox {
+    width: 150px;
+    position: absolute;
+    transition: .3s;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.306);
+}
+
+.dzdp_mainPage_noteImg {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(128, 128, 128, 0.553);
+}
+
+.dzdp_mainPage_noteText {
+    width: 100%;
+    height: 20%;
+    background-color: rgba(7, 170, 235, 0.785);
+    margin: 0 auto;
+}
+
+.dzdp_Page_bottom {
+    display: flex;
+    width: 100%; 
+    height: 8%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+    border-top: 1px solid rgba(128, 128, 128, 0.119); 
+    position: fixed; 
+    bottom: 0px;
+    background-color: white;
+}
+
+.dzdp_mainPage_bottomTab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    font-size: 12px;
+    color: gray;
+}
+
+.dzdp_mainPage_bottomTab>.tab_choice,.tab_choice_publish {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dzdp_mainPage_bottomTab .tab_choice_publish {
+    background-image: linear-gradient(to right,rgb(254, 138, 58), rgb(253, 94, 34), rgb(253, 61, 16)); 
+    width: 65px; 
+    color: white; 
+    font-weight: 600; 
+    font-size: 12px; 
+    background-color: white;
+}
+
+.bottom_tab_active {
+    font-size: 10px;
+    color: rgb(253, 61, 16);
+    background-color: rgb(255, 236, 227);
+}
