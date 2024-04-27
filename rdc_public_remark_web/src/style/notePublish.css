@@ -6,16 +6,18 @@
 
 
 .dzdp_notePublish_head {
-    width: 100%;
+    width: 90%;
     height: 5%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: 5px;
 }
 
 .dzdp_notePublish_editContent {
-    width: 100%;
+    width: 90%;
     height: 85%;
 
     margin-top: 15px;
@@ -95,4 +97,5 @@
 
     border: none;
     background-color: rgb(255, 99, 57);
+    margin-bottom: 10px;
 }

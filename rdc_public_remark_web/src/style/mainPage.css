@@ -25,7 +25,7 @@
 }
 
 .dzdp_mainPage_search {
-    width: 100%;
+    width: 90%;
     height: 30px;
     padding-left: 10px;
     line-height: 30px;
@@ -59,7 +59,7 @@
 }
 
 .dzdp_mainPage_content {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -79,14 +79,11 @@
     color: gray;
 }
 
-.header_tab_active {
-    background: linear-gradient(rgb(254, 114, 45), rgb(254, 99, 57))no-repeat left bottom /  30px 3px ;
-}
-
 .header_tab_active,.dzdp_mainPage_content_tab .content_tab_active {
     font-size: 15px;
     font-weight: 600;
     color: black;
+    background: linear-gradient(rgb(254, 114, 45), rgb(254, 99, 57))no-repeat left bottom /  30px 3px ;
 }
 
 .dzdp_mainPage_noteShow {

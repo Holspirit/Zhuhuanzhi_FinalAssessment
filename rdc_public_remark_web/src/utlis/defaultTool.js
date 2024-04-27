@@ -123,3 +123,22 @@ function setPosition () {
 
     waterFall.style.height = max + 'px'
 }
+
+
+//封装本地存储渲染
+function localRender () {
+    //获取本地存储中的昵称
+    document.querySelector('.editUname span').innerHTML = localStorage.getItem('uname')
+
+    //获取本地存储中的性别
+    document.querySelector('.editGender span').innerHTML = localStorage.getItem('gender')
+
+    //获取本地存储中的个人简介
+    document.querySelector('.editInroduce span').innerHTML = localStorage.getItem('introduce')
+
+    //获取个人生日
+    document.querySelector('.editBirthday span').innerHTML = localStorage.getItem('birthday')
+    
+    //获取个人家乡区域
+    document.querySelector('.editArea span').innerHTML = localStorage.getItem('area')
+}

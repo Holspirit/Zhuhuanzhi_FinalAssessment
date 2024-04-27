@@ -172,6 +172,7 @@ document.querySelector('.personPage_personMessage_edit').addEventListener('click
     }, 200)
 })
 
+//个人资料界面返回我的界面
 document.querySelector('#backIcon_02').addEventListener('click', () => {
     setTimeout(() => {
         document.querySelector('.dzdp_personPage').style.display = 'flex'
@@ -180,9 +181,19 @@ document.querySelector('#backIcon_02').addEventListener('click', () => {
     }, 200)
 })
 
+//昵称填写界面返回个人资料界面
 document.querySelector('#backIcon_03').addEventListener('click', () => {
     setTimeout(() => {
         document.querySelector('.dzdp_personEditPage_uname').style.display = 'none'
+        document.querySelector('.dzdp_personEditPage').style.display = 'flex'
+        document.body.style.backgroundColor = 'white'
+    }, 200)
+})
+
+//个人简介填写界面返回个人资料界面
+document.querySelector('#backIcon_04').addEventListener('click', () => {
+    setTimeout(() => {
+        document.querySelector('.dzdp_personEditPage_introduce').style.display = 'none'
         document.querySelector('.dzdp_personEditPage').style.display = 'flex'
         document.body.style.backgroundColor = 'white'
     }, 200)
@@ -195,7 +206,7 @@ for (let i = 0; i < 7; i++) {
             e.target.style.backgroundColor = 'rgb(241, 241, 241)'
             setInterval(() => {
                 e.target.style.backgroundColor = 'white'
-            }, 150);
+            }, 100);
         }  
         switch (i) {
             case 0:
@@ -205,25 +216,34 @@ for (let i = 0; i < 7; i++) {
                 console.log(1);
                 break;
             case 2:
+                //打开昵称填写写界面
                 document.querySelector('.dzdp_personEditPage').style.left = '-5000px'
                 setTimeout(() => {
                     document.querySelector('.dzdp_personEditPage').style.display = 'none'
                     document.querySelector('.dzdp_personEditPage').style.left = '0'
                     document.querySelector('.dzdp_personEditPage_uname').style.display = 'flex'
-                    document.body.style.backgroundColor = 'rgb(241, 241, 241)'
+                    document.body.style.backgroundColor = 'rgb(246, 246, 246)'
                 }, 500);
                 break;
             case 3:
-                console.log(3);
+                //选择性别
+                document.querySelector('.dzdp_personEditPage_gender').style.display = 'flex'
                 break;
             case 4:
-                console.log(4);
+                //打开个人简介界面
+                document.querySelector('.dzdp_personEditPage').style.left = '-5000px'
+                setTimeout(() => {
+                    document.querySelector('.dzdp_personEditPage').style.display = 'none'
+                    document.querySelector('.dzdp_personEditPage').style.left = '0'
+                    document.querySelector('.dzdp_personEditPage_introduce').style.display = 'flex'
+                    document.body.style.backgroundColor = 'rgb(246, 246, 246)'
+                }, 500);
                 break;
             case 5:
-                console.log(5);
+                document.querySelector('.dzdp_personEditPage_birthday').style.display = 'flex'
                 break;
             case 6:
-                console.log(6);
+                document.querySelector('.dzdp_personEditPage_area').style.display = 'flex'
                 break;
             default:
                 break;
@@ -231,4 +251,73 @@ for (let i = 0; i < 7; i++) {
     })
 }
 
-setPosition()
+//选择对应性别
+for (let i = 0; i < 2; i ++) {
+    document.querySelectorAll('.genderChoose_box>li')[i].addEventListener('click', e => {
+        if (e.target.tagName === 'LI') {
+            document.querySelector('.dzdp_personEditPage_gender').style.display = 'none'
+            document.querySelector('.editGender span').innerHTML = e.target.innerHTML
+            localStorage.setItem('gender', e.target.innerHTML)
+        }
+    })
+}
+
+//保存昵称数据
+document.querySelector('.uname_store').addEventListener('click', () => {
+    localStorage.setItem('uname', document.querySelector('.dzdp_unameEdit').value)
+    document.querySelector('#backIcon_03').click()
+    localRender()
+})
+
+//保存个人简介数据
+document.querySelector('.introduce_store').addEventListener('click', () => {
+    localStorage.setItem('introduce', document.querySelector('[name=person_introduce]').value)
+    document.querySelector('#backIcon_04').click()
+    localRender()
+})
+
+//获取个人简介字数
+document.querySelector('[name=person_introduce]').addEventListener('input', e => {
+    document.querySelector('.introduce_numberList span').innerHTML = `${100 - e.target.value.length}`
+})
+
+//填写生日界面的确定与取消
+document.querySelector('.birthdayEdit_btn .cancel').addEventListener('click', () => {
+    document.querySelector('.dzdp_personEditPage_birthday').style.display = 'none'
+})
+
+document.querySelector('.birthdayEdit_btn .confirm').addEventListener('click', () => {
+    document.querySelector('.dzdp_personEditPage_birthday').style.display = 'none'
+    localStorage.setItem('birthday', `
+    ${document.querySelector('.yearBox').value}-${document.querySelector('.monthBox').value}-${document.querySelector('.dayBox').value}
+    `)
+    localRender()
+})
+
+//填写家乡界面的确定与取消
+document.querySelector('.area_editBox_btn .cancel').addEventListener('click', () => {
+    document.querySelector('.dzdp_personEditPage_area').style.display = 'none'
+})
+
+document.querySelector('.area_editBox_btn .confirm').addEventListener('click', () => {
+    document.querySelector('.dzdp_personEditPage_area').style.display = 'none'
+    localStorage.setItem('area', document.querySelector('.areaEdit').value)
+    localRender()
+})
+
+
+//退出登录
+document.querySelector('.personPage_logOut').addEventListener('click', () => {
+    localStorage.removeItem('token')
+    document.querySelector('.dzdp_personPage').style.display = 'none'
+    document.querySelector('.dzdp_Page_bottom').style.display = 'none'
+    document.querySelector('.dzdp_login').style.display = 'flex'
+
+    document.querySelector('.bottom_tab_active').classList.remove('bottom_tab_active')
+    document.querySelector('.dzdp_mainPage_bottomTab li:nth-child(1)').classList.add('bottom_tab_active')
+})
+
+
+localRender()
+
+

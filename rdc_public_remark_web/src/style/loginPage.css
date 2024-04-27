@@ -7,9 +7,9 @@
 }
 
 .dzdp_login_header {
-    width: 90%;
+    width: 80%;
     height: 30px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     display: flex;
     justify-content: space-between;
@@ -120,4 +120,6 @@
 .dzdp_login_bottom {
     color: rgba(128, 128, 128, 0.797);
     font-size: 12px;
+
+    margin-bottom: 40px;
 }

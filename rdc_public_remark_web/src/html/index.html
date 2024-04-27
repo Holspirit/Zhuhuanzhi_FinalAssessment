@@ -62,9 +62,11 @@
                 <li class="tab_choice">出行</li>
                 <li class="tab_choice">户外</li>
             </ul>
-            <div class="dzdp_mainPage_noteShow recommendPage">
-                
-            </div>
+            <div class="dzdp_mainPage_noteSlider">
+                <div class="dzdp_mainPage_noteShow recommendPage">
+                    
+                </div>
+            </div>   
        </div> 
     </div>
 
@@ -87,7 +89,7 @@
             </div>
             <input type="text" class="dzdp_notePublish_titleInput" placeholder="填写标题会被更多人看到~">
             <hr>
-            <textarea name="" id="" cols="30" rows="10" class="dzdp_notePublish_mainBody" placeholder="添加正文" style="width: 100%;"></textarea>
+            <textarea name="note_mainBody" id="1" cols="30" rows="10" class="dzdp_notePublish_mainBody" placeholder="添加正文" style="width: 100%;"></textarea>
             <div class="dzdp_notePublish_tag_topic">
                 <div class="dzdp_notePublish_topicBox">
                     <img src="/static/icon/topic.svg" alt="" style="width: 25%;">
@@ -241,7 +243,10 @@
             </li>
             <li class="editPart editUname">
                 昵称
-                <img src="/static/icon/enter.svg" alt="" style="width: 27px;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-size: 13px; color: rgb(158, 172, 180);">填写</span>
+                    <img src="/static/icon/enter.svg" alt="" style="width: 27px;  margin-left: 10px;">
+                </div>
             </li>
             <li class="editPart editGender">
                 性别
@@ -260,7 +265,10 @@
             <li class="edit_gapLine"></li>
             <li class="editPart editBirthday">
                 生日
-                <img src="/static/icon/enter.svg" alt="" style="width: 27px;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-size: 13px; color: rgb(158, 172, 180);">填写</span>
+                    <img src="/static/icon/enter.svg" alt="" style="width: 27px; margin-left: 10px;">
+                </div>
             </li>
             <li class="editPart editArea">
                 家乡
@@ -277,17 +285,74 @@
         <div class="dzdp_personEditPage_head" style="justify-content: space-between;">
             <img src="/static/icon/back.svg" alt="" id="backIcon_03" style="width: 27px; margin-left: 10px;">
             <span class="dzdp_personEditPage_title" style="margin: 0;">修改昵称</span>
-            <span>保存</span>
+            <span style="margin-right: 20px;"  class="uname_store">保存</span>
         </div>
         <div class="dzdp_unameEdit_tipBox">
             <div class="dzdp_unameEdit_tip">
-
+                <span style="margin-left: 10px;">昵称30天内可修改4次</span>
             </div>
         </div>
         <div class="dzdp_unameEditBox">
-            昵称<input type="text" class="dzdp_unameEdit">
+            <span style="margin-left: 10px;">昵称</span><input type="text" class="dzdp_unameEdit">
         </div>
             
+    </div>
+
+    <!-- 选择性别界面 -->
+    <div class="dzdp_personEditPage_gender dzdp_page" style="display: none;">
+        <ul class="genderChoose_box">
+            <li class="male">男</li>
+            <li class="female">女</li>
+        </ul>
+    </div>
+
+    <!-- 添加个人简介界面 -->
+    <div class="dzdp_personEditPage_introduce dzdp_page" style="display: none;">
+        <div class="dzdp_personEditPage_head" style="justify-content: space-between;">
+            <img src="/static/icon/back.svg" alt="" id="backIcon_04" style="width: 27px; margin-left: 10px;">
+            <span class="dzdp_personEditPage_title" style="margin: 0;">编辑个人介绍</span>
+            <span style="margin-right: 20px;"  class="introduce_store">保存</span>
+        </div>
+        <textarea name="person_introduce" id="2" cols="30" rows="10"></textarea>
+        <div class="introduce_numberList">
+            <span style="font-size: 14px; margin-right: 10px;">100</span>
+        </div>
+    </div>
+
+    <!-- 填写生日界面 -->
+    <div class="dzdp_personEditPage_birthday dzdp_page" style="display: none;">
+        <div class="birthdayEdit">
+             <ul class="birthdayEditBox">  
+                <li class="year">
+                    年
+                    <input class="yearBox" type="text" minlength="4" maxlength="4"></input>
+                </li>
+                <li class="month">
+                    月
+                    <input class="monthBox" type="text" minlength="1" maxlength="2"></input>
+                </li>
+                <li class="day">
+                    日
+                    <input class="dayBox" type="text" minlength="1" maxlength="2"></input>
+                </li>  
+            </ul> 
+            <div class="birthdayEdit_btn" style="margin-bottom: 10px;">
+                <button class="cancel">取消</button>
+                <button class="confirm">确定</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- 填写家乡界面 -->
+    <div class="dzdp_personEditPage_area dzdp_page" style="display: none;">
+        <div class="area_editBox">
+            <input type="text" class="areaEdit">
+            <div class="area_editBox_btn">
+                <button class="cancel" style="color: orange;">取消</button>
+                <button class="confirm" style="color: orange;">确定</button>
+            </div>
+        </div>
     </div>
 
     <!-- 引用js文件 -->
